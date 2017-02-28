@@ -1,0 +1,478 @@
+--------------------------------------------------------------------------------
+SOBRE O SISTEMA ESPECIALISTA
+  -- Nome:    Sistema Especialista para Detecção de Gêneros Literários
+  -- Autores: Rodolpho Rosa, Ronaldo Vieira
+
+Operador de maior precedência: conjunção
+Fator de confiança mínimo para aceitação de regra: 50
+
+SOBRE OS ARQUIVOS
+  Arquivo original: C:\sinta32\TrabalhoIA.bcm
+  O sistema não possui recursos de ajuda.
+--------------------------------------------------------------------------------
+
+VARIÁVEIS
+
+  Acontecimentos
+    Valores:
+      Muito Pouco
+      Pouco
+      Muito
+    Tipo:
+      univalorada
+  Contexto Espaço-Temporal
+    Valores:
+      Muito condensado
+      Relativamente condensado
+      ilimitado
+    Tipo:
+      univalorada
+  Descrição
+    Valores:
+      Pouca
+      Média
+      Muita
+    Tipo:
+      univalorada
+  Diálogo
+    Valores:
+      Pouco
+      Médio
+      Muito
+    Tipo:
+      univalorada
+  Elemento mais importante
+    Valores:
+      Narrativa
+      Diálogo
+      Ambos
+    Tipo:
+      univalorada
+  Espaço
+    Valores:
+      Pequeno
+      Médio
+      Grande
+    Tipo:
+      univalorada
+  Estilo Dramático
+    Valores:
+      Tragédia
+      Comédia
+      Farsa
+    Tipo:
+      univalorada
+  Estrutura
+    Valores:
+      Verso
+      Prosa
+    Tipo:
+      univalorada
+  Formato do Poema
+    Valores:
+      Haicai
+      Soneto
+    Tipo:
+      univalorada
+  Gênero
+    Valores:
+      Narrativo
+      Lírico
+      Dramático
+    Tipo:
+      univalorada
+  Intriga
+    Valores:
+      Simples
+      Relativamente Simples
+      Complexa
+    Tipo:
+      univalorada
+  Narrativa
+    Valores:
+      Curta
+      Média
+      Longa
+    Tipo:
+      univalorada
+  Número de Personagens
+    Valores:
+      Pequeno
+      Médio
+      Grande
+    Tipo:
+      univalorada
+  Número de Versos
+    Valores:
+      3
+      14
+    Tipo:
+      univalorada
+  Personagens
+    Valores:
+      Humanos
+      Animais
+      Heróis
+    Tipo:
+      univalorada
+  Possui personagens
+    Tipo:
+      univalorada
+  Subgênero
+    Valores:
+      Poesia épica
+      Fábula
+      Romance
+      Novela
+      Conto
+      Crônica
+      Ensaio
+      Haicai
+      Soneto
+      Tragédia
+      Comédia
+      Farsa
+    Tipo:
+      univalorada
+  Tempo Cronológico
+    Valores:
+      Pequeno
+      Médio
+      Grande
+    Tipo:
+      univalorada
+  Tempo Histórico
+    Valores:
+      Passado
+      Presente
+      Futuro
+    Tipo:
+      univalorada
+  Temática
+    Valores:
+      Fantástica
+      Heróica
+      Realidade Social
+      Ensinamento Moral
+      Livre
+      Futurista
+      Crítica
+    Tipo:
+      univalorada
+  Teor
+    Valores:
+      Trágico
+      Cômico
+      Caricatural
+    Tipo:
+      univalorada
+  Texto
+    Valores:
+      Poema
+      Prosa
+    Tipo:
+      univalorada
+
+OBJETIVOS
+
+  Subgênero
+
+REGRAS
+
+  Regra 1
+    SE Número de Personagens = Pequeno
+    E  Acontecimentos = Muito Pouco
+    ENTÃO Narrativa = Curta CNF 100%
+
+  Regra 2
+    SE Número de Personagens = Pequeno
+    E  Acontecimentos = Pouco
+    ENTÃO Narrativa = Curta CNF 100%
+
+  Regra 3
+    SE Número de Personagens = Pequeno
+    E  Acontecimentos = Muito
+    ENTÃO Narrativa = Média CNF 100%
+
+  Regra 4
+    SE Número de Personagens = Médio
+    E  Acontecimentos = Muito Pouco
+    ENTÃO Narrativa = Média CNF 100%
+
+  Regra 5
+    SE Número de Personagens = Médio
+    E  Acontecimentos = Pouco
+    ENTÃO Narrativa = Média CNF 100%
+
+  Regra 6
+    SE Número de Personagens = Médio
+    E  Acontecimentos = Muito
+    ENTÃO Narrativa = Longa CNF 100%
+
+  Regra 7
+    SE Número de Personagens = Grande
+    ENTÃO Narrativa = Longa CNF 100%
+
+  Regra 8
+    SE Gênero = Lírico
+    ENTÃO Texto = Poema CNF 100%
+
+  Regra 9
+    SE Estrutura = Verso
+    ENTÃO Texto = Poema CNF 100%
+
+  Regra 10
+    SE NÃO Estrutura = Verso
+    ENTÃO Texto = Prosa CNF 100%
+
+  Regra 11
+    SE Texto = Poema
+    E  Número de Versos = 3
+    ENTÃO Formato do Poema = Haicai CNF 100%
+
+  Regra 12
+    SE Texto = Poema
+    E  Número de Versos = 14
+    ENTÃO Subgênero = Soneto CNF 100%
+
+  Regra 13
+    SE Gênero = Narrativo
+    E  Contexto Espaço-Temporal = Relativamente condensado
+    E  Intriga = Relativamente Simples
+    E  Elemento mais importante = Narrativa
+    ENTÃO Subgênero = Novela CNF 100%
+
+  Regra 14
+    SE Gênero = Narrativo
+    E  Contexto Espaço-Temporal = Muito condensado
+    E  Intriga = Simples
+    E  Elemento mais importante = Diálogo
+    ENTÃO Subgênero = Conto CNF 100%
+
+  Regra 15
+    SE Gênero = Narrativo
+    E  Contexto Espaço-Temporal = ilimitado
+    E  Intriga = Complexa
+    E  Elemento mais importante = Ambos
+    ENTÃO Subgênero = Romance CNF 100%
+
+  Regra 16
+    SE Texto = Poema
+    E  Temática = Heróica
+    ENTÃO Subgênero = Poesia épica CNF 100%
+
+  Regra 17
+    SE Gênero = Narrativo
+    E  Temática = Ensinamento Moral
+    ENTÃO Subgênero = Fábula CNF 100%
+
+  Regra 18
+    SE Gênero = Narrativo
+    E  Temática = Realidade Social
+    ENTÃO Subgênero = Crônica CNF 100%
+
+  Regra 19
+    SE Gênero = Narrativo
+    E  Temática = Crítica
+    ENTÃO Subgênero = Ensaio CNF 100%
+
+  Regra 20
+    SE Espaço = Pequeno
+    E  Tempo Cronológico = Pequeno
+    ENTÃO Contexto Espaço-Temporal = Muito condensado CNF 100%
+
+  Regra 21
+    SE Espaço = Pequeno
+    E  Tempo Cronológico = Médio
+    ENTÃO Contexto Espaço-Temporal = Relativamente condensado CNF 100%
+
+  Regra 22
+    SE Espaço = Pequeno
+    E  Tempo Cronológico = Grande
+    ENTÃO Contexto Espaço-Temporal = Relativamente condensado CNF 100%
+
+  Regra 23
+    SE Espaço = Médio
+    E  Tempo Cronológico = Pequeno
+    ENTÃO Contexto Espaço-Temporal = Relativamente condensado CNF 100%
+
+  Regra 24
+    SE Espaço = Médio
+    E  Tempo Cronológico = Médio
+    ENTÃO Contexto Espaço-Temporal = Relativamente condensado CNF 100%
+
+  Regra 25
+    SE Espaço = Médio
+    E  Tempo Cronológico = Grande
+    ENTÃO Contexto Espaço-Temporal = Relativamente condensado CNF 100%
+
+  Regra 26
+    SE Espaço = Grande
+    E  Tempo Cronológico = Pequeno
+    ENTÃO Contexto Espaço-Temporal = Relativamente condensado CNF 100%
+
+  Regra 27
+    SE Espaço = Grande
+    E  Tempo Cronológico = Médio
+    ENTÃO Contexto Espaço-Temporal = Relativamente condensado CNF 100%
+
+  Regra 28
+    SE Espaço = Grande
+    E  Tempo Cronológico = Grande
+    ENTÃO Contexto Espaço-Temporal = ilimitado CNF 100%
+
+  Regra 29
+    SE Temática = Fantástica
+    E  Personagens = Animais
+    ENTÃO Subgênero = Fábula CNF 100%
+
+  Regra 30
+    SE Possui personagens = Não
+    E  Temática = Livre
+    ENTÃO Subgênero = Ensaio CNF 100%
+
+  Regra 31
+    SE Possui personagens = Não
+    E  Temática = Realidade Social
+    ENTÃO Subgênero = Crônica CNF 100%
+
+  Regra 32
+    SE Possui personagens = Sim
+    E  Número de Personagens = Pequeno
+    ENTÃO Intriga = Simples CNF 100%
+
+  Regra 33
+    SE Possui personagens = Sim
+    E  Número de Personagens = Médio
+    ENTÃO Intriga = Relativamente Simples CNF 100%
+
+  Regra 34
+    SE Possui personagens = Sim
+    E  Número de Personagens = Grande
+    ENTÃO Intriga = Complexa CNF 100%
+
+  Regra 35
+    SE Possui personagens = Sim
+    E  Personagens = Animais
+    ENTÃO Temática = Fantástica CNF 100%
+
+  Regra 36
+    SE Gênero = Dramático
+    E  Teor = Trágico
+    ENTÃO Subgênero = Tragédia CNF 100%
+
+  Regra 37
+    SE Gênero = Dramático
+    E  Teor = Cômico
+    ENTÃO Subgênero = Comédia CNF 100%
+
+  Regra 38
+    SE Gênero = Dramático
+    E  Teor = Caricatural
+    ENTÃO Subgênero = Farsa CNF 100%
+
+  Regra 39
+    SE Narrativa = Curta
+    E  Diálogo = Pouco
+    ENTÃO Elemento mais importante = Ambos CNF 100%
+
+  Regra 40
+    SE Narrativa = Curta
+    E  Diálogo = Médio
+    ENTÃO Elemento mais importante = Diálogo CNF 100%
+
+  Regra 41
+    SE Narrativa = Curta
+    E  Diálogo = Muito
+    ENTÃO Elemento mais importante = Diálogo CNF 100%
+
+  Regra 42
+    SE Narrativa = Média
+    E  Diálogo = Pouco
+    ENTÃO Elemento mais importante = Narrativa CNF 100%
+
+  Regra 43
+    SE Narrativa = Média
+    E  Diálogo = Médio
+    ENTÃO Elemento mais importante = Ambos CNF 100%
+
+  Regra 44
+    SE Narrativa = Média
+    E  Diálogo = Muito
+    ENTÃO Elemento mais importante = Diálogo CNF 100%
+
+  Regra 45
+    SE Narrativa = Longa
+    E  Diálogo = Pouco
+    ENTÃO Elemento mais importante = Narrativa CNF 100%
+
+  Regra 46
+    SE Narrativa = Longa
+    E  Diálogo = Médio
+    ENTÃO Elemento mais importante = Narrativa CNF 100%
+
+  Regra 47
+    SE Narrativa = Longa
+    E  Diálogo = Muito
+    ENTÃO Elemento mais importante = Ambos CNF 100%
+
+  Regra 48
+    SE Narrativa = Curta
+    E  Personagens = Animais
+    ENTÃO Subgênero = Fábula CNF 100%
+
+  Regra 49
+    SE Possui personagens = Não
+    ENTÃO Número de Personagens = DESCONHECIDO CNF 100%
+
+PERGUNTAS
+
+  Variável:Acontecimentos
+     Pergunta:"Qual é a quantidade de acontecimentos do texto?"
+  Variável:Contexto Espaço-Temporal
+     Pergunta:"Qual é o contexto espaço-temporal do texto?"
+  Variável:Descrição
+     Pergunta:"Qual é o nível de descrição do texto?"
+  Variável:Diálogo
+     Pergunta:"Qual é a quantidade de diálogos do texto?"
+  Variável:Elemento mais importante
+     Pergunta:"Qual é o elemento mais importante do texto?"
+  Variável:Espaço
+     Pergunta:"Qual é o tamanho do espaço do texto?"
+  Variável:Estilo Dramático
+     Pergunta:"Qual é o estilo dramático do texto?"
+  Variável:Estrutura
+     Pergunta:"Qual é a estrutura do texto?"
+  Variável:Formato do Poema
+     Pergunta:"Qual é o formato do poema?"
+  Variável:Gênero
+     Pergunta:"Qual é o gênero do texto?"
+  Variável:Intriga
+     Pergunta:"O quão complexa é a intriga do texto?"
+  Variável:Narrativa
+     Pergunta:"Qual é a duração da narrativa do texto?"
+  Variável:Número de Personagens
+     Pergunta:"Qual é o número de personagens do texto?"
+  Variável:Número de Versos
+     Pergunta:"Qual é o número de versos do texto?"
+  Variável:Personagens
+     Pergunta:"De quê tipo são os personagens do texto?"
+  Variável:Possui personagens
+     Pergunta:"O texto possui personagens?"
+  Variável:Tempo Cronológico
+     Pergunta:"Qual é a amplitude de tempo cronológico do texto?"
+  Variável:Tempo Histórico
+     Pergunta:"Qual é o tempo do texto?"
+  Variável:Temática
+     Pergunta:"Qual é a temática do texto?"
+  Variável:Teor
+     Pergunta:"Qual é o teor do texto?"
+  Variável:Texto
+     Pergunta:"Qual é o tipo de texto?"
+
+--------------------------------------------------------------------------------
+Gerado com o Expert SINTA versão 1.1b
+(c) 1997 - Universidade Federal do Ceará
+           Laboratório de Inteligência Artificial
+           LIA/UFC
+--------------------------------------------------------------------------------

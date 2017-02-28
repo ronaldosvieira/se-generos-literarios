@@ -1,0 +1,451 @@
+--------------------------------------------------------------------------------
+CÓDIGOS INTERNOS DE BASE DE CONHECIMENTO
+SOBRE O SISTEMA ESPECIALISTA
+  -- Nome:    Sistema Especialista para Detecção de Gêneros Literários
+  -- Autores: Rodolpho Rosa, Ronaldo Vieira
+
+SOBRE OS ARQUIVOS
+  Arquivo original: C:\sinta32\TrabalhoIA.bcm
+  O sistema não possui recursos de ajuda.
+--------------------------------------------------------------------------------
+
+Variáveis - CÓDIGO, NOME
+
+1, Gênero
+2, Texto
+3, Número de Versos
+4, Personagens
+5, Narrativa
+6, Estrutura
+7, Temática
+8, Número de Personagens
+9, Acontecimentos
+10, Formato do Poema
+11, Subgênero
+12, Elemento mais importante
+13, Contexto Espaço-Temporal
+14, Espaço
+15, Tempo Cronológico
+16, Tempo Histórico
+17, Intriga
+18, Estilo Dramático
+19, Diálogo
+20, Descrição
+21, Possui personagens
+22, Teor
+
+Variáveis - NOME, CÓDIGO
+
+Acontecimentos, 9
+Contexto Espaço-Temporal, 13
+Descrição, 20
+Diálogo, 19
+Elemento mais importante, 12
+Espaço, 14
+Estilo Dramático, 18
+Estrutura, 6
+Formato do Poema, 10
+Gênero, 1
+Intriga, 17
+Narrativa, 5
+Número de Personagens, 8
+Número de Versos, 3
+Personagens, 4
+Possui personagens, 21
+Subgênero, 11
+Tempo Cronológico, 15
+Tempo Histórico, 16
+Temática, 7
+Teor, 22
+Texto, 2
+
+Valores - CÓDIGO, NOME, CÓDIGO DA VARIÁVEL, POSIÇÃO
+
+1, Narrativo, 1, 1
+2, Lírico, 1, 2
+3, Dramático, 1, 3
+4, Poema, 2, 1
+5, Prosa, 2, 2
+6, 3, 3, 1
+7, 14, 3, 2
+8, Humanos, 4, 1
+9, Animais, 4, 2
+10, Heróis, 4, 3
+11, Curta, 5, 1
+12, Média, 5, 2
+13, Longa, 5, 3
+14, Verso, 6, 1
+15, Prosa, 6, 2
+16, Fantástica, 7, 1
+17, Heróica, 7, 2
+18, Realidade Social, 7, 3
+19, Ensinamento Moral, 7, 4
+20, Livre, 7, 5
+21, Futurista, 7, 6
+22, Pequeno, 8, 1
+23, Médio, 8, 2
+24, Grande, 8, 3
+25, Muito Pouco, 9, 1
+26, Pouco, 9, 2
+27, Muito, 9, 3
+28, Haicai, 10, 1
+29, Soneto, 10, 2
+30, Poesia épica, 11, 1
+31, Fábula, 11, 2
+32, Romance, 11, 3
+33, Novela, 11, 4
+34, Conto, 11, 5
+35, Crônica, 11, 6
+36, Ensaio, 11, 7
+37, Narrativa, 12, 1
+38, Diálogo, 12, 2
+39, Ambos, 12, 3
+40, Muito condensado, 13, 1
+41, Relativamente condensado, 13, 2
+42, ilimitado, 13, 3
+43, Pequeno, 14, 1
+44, Médio, 14, 2
+45, Grande, 14, 3
+46, Pequeno, 15, 1
+47, Médio, 15, 2
+48, Grande, 15, 3
+49, Passado, 16, 1
+50, Presente, 16, 2
+51, Futuro, 16, 3
+52, Simples, 17, 1
+53, Relativamente Simples, 17, 2
+54, Complexa, 17, 3
+55, Tragédia, 18, 1
+56, Comédia, 18, 2
+57, Farsa, 18, 3
+58, Pouco, 19, 1
+59, Médio, 19, 2
+60, Muito, 19, 3
+61, Pouca, 20, 1
+62, Média, 20, 2
+63, Muita, 20, 3
+64, Crítica, 7, 7
+65, Trágico, 22, 1
+66, Cômico, 22, 2
+67, Caricatural, 22, 3
+68, Haicai, 11, 8
+69, Soneto, 11, 9
+70, Tragédia, 11, 10
+71, Comédia, 11, 11
+72, Farsa, 11, 12
+
+Valores - NOME, CÓDIGO, CÓDIGO DA VARIÁVEL, POSIÇÃO
+
+14, 7, 3, 2
+3, 6, 3, 1
+Ambos, 39, 12, 3
+Animais, 9, 4, 2
+Caricatural, 67, 22, 3
+Complexa, 54, 17, 3
+Comédia, 56, 18, 2
+Comédia, 71, 11, 11
+Conto, 34, 11, 5
+Crítica, 64, 7, 7
+Crônica, 35, 11, 6
+Curta, 11, 5, 1
+Cômico, 66, 22, 2
+Diálogo, 38, 12, 2
+Dramático, 3, 1, 3
+Ensaio, 36, 11, 7
+Ensinamento Moral, 19, 7, 4
+Fantástica, 16, 7, 1
+Farsa, 57, 18, 3
+Farsa, 72, 11, 12
+Futurista, 21, 7, 6
+Futuro, 51, 16, 3
+Fábula, 31, 11, 2
+Grande, 24, 8, 3
+Grande, 45, 14, 3
+Grande, 48, 15, 3
+Haicai, 28, 10, 1
+Haicai, 68, 11, 8
+Heróica, 17, 7, 2
+Heróis, 10, 4, 3
+Humanos, 8, 4, 1
+Livre, 20, 7, 5
+ilimitado, 42, 13, 3
+Longa, 13, 5, 3
+Lírico, 2, 1, 2
+Muita, 63, 20, 3
+Muito, 27, 9, 3
+Muito, 60, 19, 3
+Muito condensado, 40, 13, 1
+Muito Pouco, 25, 9, 1
+Média, 12, 5, 2
+Média, 62, 20, 2
+Médio, 23, 8, 2
+Médio, 44, 14, 2
+Médio, 47, 15, 2
+Médio, 59, 19, 2
+Narrativa, 37, 12, 1
+Narrativo, 1, 1, 1
+Novela, 33, 11, 4
+Passado, 49, 16, 1
+Pequeno, 22, 8, 1
+Pequeno, 43, 14, 1
+Pequeno, 46, 15, 1
+Poema, 4, 2, 1
+Poesia épica, 30, 11, 1
+Pouca, 61, 20, 1
+Pouco, 26, 9, 2
+Pouco, 58, 19, 1
+Presente, 50, 16, 2
+Prosa, 5, 2, 2
+Prosa, 15, 6, 2
+Realidade Social, 18, 7, 3
+Relativamente Simples, 53, 17, 2
+Relativamente condensado, 41, 13, 2
+Romance, 32, 11, 3
+Simples, 52, 17, 1
+Soneto, 29, 10, 2
+Soneto, 69, 11, 9
+Tragédia, 55, 18, 1
+Tragédia, 70, 11, 10
+Trágico, 65, 22, 1
+Verso, 14, 6, 1
+
+Valores - CÓDIGO DA VARIÁVEL, CÓDIGO, NOME, POSIÇÃO
+
+1, 1, Narrativo, 1
+1, 2, Lírico, 2
+1, 3, Dramático, 3
+2, 4, Poema, 1
+2, 5, Prosa, 2
+3, 6, 3, 1
+3, 7, 14, 2
+4, 8, Humanos, 1
+4, 9, Animais, 2
+4, 10, Heróis, 3
+5, 11, Curta, 1
+5, 12, Média, 2
+5, 13, Longa, 3
+6, 14, Verso, 1
+6, 15, Prosa, 2
+7, 16, Fantástica, 1
+7, 17, Heróica, 2
+7, 18, Realidade Social, 3
+7, 19, Ensinamento Moral, 4
+7, 20, Livre, 5
+7, 21, Futurista, 6
+7, 64, Crítica, 7
+8, 22, Pequeno, 1
+8, 23, Médio, 2
+8, 24, Grande, 3
+9, 25, Muito Pouco, 1
+9, 26, Pouco, 2
+9, 27, Muito, 3
+10, 28, Haicai, 1
+10, 29, Soneto, 2
+11, 30, Poesia épica, 1
+11, 31, Fábula, 2
+11, 32, Romance, 3
+11, 33, Novela, 4
+11, 34, Conto, 5
+11, 35, Crônica, 6
+11, 36, Ensaio, 7
+11, 68, Haicai, 8
+11, 69, Soneto, 9
+11, 70, Tragédia, 10
+11, 71, Comédia, 11
+11, 72, Farsa, 12
+12, 37, Narrativa, 1
+12, 38, Diálogo, 2
+12, 39, Ambos, 3
+13, 40, Muito condensado, 1
+13, 41, Relativamente condensado, 2
+13, 42, ilimitado, 3
+14, 43, Pequeno, 1
+14, 44, Médio, 2
+14, 45, Grande, 3
+15, 46, Pequeno, 1
+15, 47, Médio, 2
+15, 48, Grande, 3
+16, 49, Passado, 1
+16, 50, Presente, 2
+16, 51, Futuro, 3
+17, 52, Simples, 1
+17, 53, Relativamente Simples, 2
+17, 54, Complexa, 3
+18, 55, Tragédia, 1
+18, 56, Comédia, 2
+18, 57, Farsa, 3
+19, 58, Pouco, 1
+19, 59, Médio, 2
+19, 60, Muito, 3
+20, 61, Pouca, 1
+20, 62, Média, 2
+20, 63, Muita, 3
+22, 65, Trágico, 1
+22, 66, Cômico, 2
+22, 67, Caricatural, 3
+
+Regras - POSIÇÃO, NOME, CÓDIGO
+
+1, Narrativa1, 1
+2, Narrativa2, 2
+3, Narrativa3, 3
+4, Narrativa4, 4
+5, Narrativa5, 5
+6, Narrativa6, 6
+7, Narrativa7, 7
+8, Texto1, 8
+9, Texto2, 9
+10, Texto3, 10
+11, Subgênero12, 11
+12, Subgênero13, 12
+13, Subgênero1, 13
+14, Subgênero2, 14
+15, Subgênero3, 15
+16, Subgênero4, 16
+17, Subgênero5, 17
+18, Subgênero6, 18
+19, Subgênero7, 19
+20, ContextoEspaçoTemporal1, 20
+21, ContextoEspaçoTemporal2, 21
+22, ContextoEspaçoTemporal3, 22
+23, ContextoEspaçoTemporal4, 23
+24, ContextoEspaçoTemporal5, 24
+25, ContextoEspaçoTemporal6, 25
+26, ContextoEspaçoTemporal7, 26
+27, ContextoEspaçoTemporal8, 27
+28, ContextoEspaçoTemporal9, 28
+29, Subgênero8, 29
+30, Subgênero9, 30
+31, Subgênero10, 31
+32, Intriga1, 32
+33, Intriga2, 33
+34, Intriga3, 34
+35, Temática, 35
+36, Subgênero14, 36
+37, Subgênero15, 37
+38, Subgênero16, 38
+39, Elemento mais importante1, 39
+40, Elemento mais importante2, 40
+41, Elemento mais importante3, 41
+42, Elemento mais importante4, 42
+43, Elemento mais importante5, 43
+44, Elemento mais importante6, 44
+45, Elemento mais importante7, 45
+46, Elemento mais importante8, 46
+47, Elemento mais importante9, 47
+48, Subgênero11, 48
+49, Numero de Personagens, 49
+
+Regras - CÓDIGO, NOME, POSIÇÃO
+
+1, Narrativa1, 1
+2, Narrativa2, 2
+3, Narrativa3, 3
+4, Narrativa4, 4
+5, Narrativa5, 5
+6, Narrativa6, 6
+7, Narrativa7, 7
+8, Texto1, 8
+9, Texto2, 9
+10, Texto3, 10
+11, Subgênero12, 11
+12, Subgênero13, 12
+13, Subgênero1, 13
+14, Subgênero2, 14
+15, Subgênero3, 15
+16, Subgênero4, 16
+17, Subgênero5, 17
+18, Subgênero6, 18
+19, Subgênero7, 19
+20, ContextoEspaçoTemporal1, 20
+21, ContextoEspaçoTemporal2, 21
+22, ContextoEspaçoTemporal3, 22
+23, ContextoEspaçoTemporal4, 23
+24, ContextoEspaçoTemporal5, 24
+25, ContextoEspaçoTemporal6, 25
+26, ContextoEspaçoTemporal7, 26
+27, ContextoEspaçoTemporal8, 27
+28, ContextoEspaçoTemporal9, 28
+29, Subgênero8, 29
+30, Subgênero9, 30
+31, Subgênero10, 31
+32, Intriga1, 32
+33, Intriga2, 33
+34, Intriga3, 34
+35, Temática, 35
+36, Subgênero14, 36
+37, Subgênero15, 37
+38, Subgênero16, 38
+39, Elemento mais importante1, 39
+40, Elemento mais importante2, 40
+41, Elemento mais importante3, 41
+42, Elemento mais importante4, 42
+43, Elemento mais importante5, 43
+44, Elemento mais importante6, 44
+45, Elemento mais importante7, 45
+46, Elemento mais importante8, 46
+47, Elemento mais importante9, 47
+48, Subgênero11, 48
+49, Numero de Personagens, 49
+
+Regras - NOME, CÓDIGO, POSIÇÃO
+
+ContextoEspaçoTemporal1, 20, 20
+ContextoEspaçoTemporal2, 21, 21
+ContextoEspaçoTemporal3, 22, 22
+ContextoEspaçoTemporal4, 23, 23
+ContextoEspaçoTemporal5, 24, 24
+ContextoEspaçoTemporal6, 25, 25
+ContextoEspaçoTemporal7, 26, 26
+ContextoEspaçoTemporal8, 27, 27
+ContextoEspaçoTemporal9, 28, 28
+Elemento mais importante1, 39, 39
+Elemento mais importante2, 40, 40
+Elemento mais importante3, 41, 41
+Elemento mais importante4, 42, 42
+Elemento mais importante5, 43, 43
+Elemento mais importante6, 44, 44
+Elemento mais importante7, 45, 45
+Elemento mais importante8, 46, 46
+Elemento mais importante9, 47, 47
+Intriga1, 32, 32
+Intriga2, 33, 33
+Intriga3, 34, 34
+Narrativa1, 1, 1
+Narrativa2, 2, 2
+Narrativa3, 3, 3
+Narrativa4, 4, 4
+Narrativa5, 5, 5
+Narrativa6, 6, 6
+Narrativa7, 7, 7
+Numero de Personagens, 49, 49
+Subgênero1, 13, 13
+Subgênero10, 31, 31
+Subgênero11, 48, 48
+Subgênero12, 11, 11
+Subgênero13, 12, 12
+Subgênero14, 36, 36
+Subgênero15, 37, 37
+Subgênero16, 38, 38
+Subgênero2, 14, 14
+Subgênero3, 15, 15
+Subgênero4, 16, 16
+Subgênero5, 17, 17
+Subgênero6, 18, 18
+Subgênero7, 19, 19
+Subgênero8, 29, 29
+Subgênero9, 30, 30
+Temática, 35, 35
+Texto1, 8, 8
+Texto2, 9, 9
+Texto3, 10, 10
+
+--------------------------------------------------------------------------------
+Gerado com o Expert SINTA versão 1.1b
+(c) 1997 - Universidade Federal do Ceará
+           Laboratório de Inteligência Artificial
+           LIA/UFC
+
+           Utilize esses códigos na programação
+           de front-ends com a Expert SINTA VCL
+--------------------------------------------------------------------------------
